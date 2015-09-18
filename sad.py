@@ -7,7 +7,7 @@ import numpy as np
 from scipy.io import wavfile
 import scipy.signal as sg
 from sklearn.mixture import GMM
-from misc_routines import write_stm, parse_config_file
+from common import write_stm, parse_config_file
 from combosad_feats import combosad_feats
 import matplotlib.pyplot as plt
 
