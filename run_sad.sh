@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wavlist=/home/mxm121931/wavlist.lst
+wavlist=$1
 cfg_fn=./config_sad
 
 

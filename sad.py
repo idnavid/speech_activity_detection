@@ -8,8 +8,10 @@ from scipy.io import wavfile
 import scipy.signal as sg
 from sklearn.mixture import GMM
 from common import write_stm, parse_config_file
-from combosad_feats import combosad_feats
 import matplotlib.pyplot as plt
+from combosad_feats import combosad_feats
+
+exit()
 
 def sad(wav_fn, cfg_fn, stm_fn):
 
