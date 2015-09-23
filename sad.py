@@ -25,7 +25,7 @@ def sad(wav_fn, cfg_fn, stm_fn):
     fs, wav = wavfile.read(wav_fn)
     wav = np.asarray(wav, dtype='float64') / max(abs(wav))
     wav = preprocess(wav[:,np.newaxis], fs, 25.0).squeeze()
-    feats = combosad_feats(wav, cfg).squeeze()
+    feats = combosad_feats(wav, cfg)
 
     #===========================================================================
     # find threshold
@@ -39,6 +39,7 @@ def sad(wav_fn, cfg_fn, stm_fn):
     #===========================================================================
     # make decisions and write output stm file
     labs = feats > thr
+    labs = labs.squeeze()
     labs = smooth_sad_decisions(labs, 1)
     tmp_segs = lbls_to_segs(labs, hoplen, cfg['fs'])
     segs = []
