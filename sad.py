@@ -7,12 +7,12 @@ import numpy as np
 from scipy.io import wavfile
 import scipy.signal as sg
 from sklearn.mixture import GMM
-from common import write_stm, parse_config_file
+from common import write_stm, write_idx, parse_config_file
 import matplotlib.pyplot as plt
 from combosad_feats import combosad_feats
 
 
-def sad(wav_fn, cfg_fn, stm_fn):
+def sad(wav_fn, cfg_fn, stm_fn, output_mode):
 
     fname = os.path.splitext(os.path.basename(wav_fn))[0]
     # read config file
@@ -41,14 +41,18 @@ def sad(wav_fn, cfg_fn, stm_fn):
     labs = feats > thr
     labs = labs.squeeze()
     labs = smooth_sad_decisions(labs, 1)
-    tmp_segs = lbls_to_segs(labs, hoplen, cfg['fs'])
-    segs = []
-    for (t1, t2) in tmp_segs:
-        t1_str = '{:07}'.format(t1).replace('.','')
-        t2_str = '{:07}'.format(t2).replace('.','')
-        uttid = '-'.join([fname, t1_str, t2_str])
-        segs.append((t1, t2, uttid))
-    write_stm(stm_fn, segs)
+    if output_mode == 'stm':
+        tmp_segs = lbls_to_segs(labs, hoplen, cfg['fs'])
+        segs = []
+        for (t1, t2) in tmp_segs:
+            t1_str = '{:07}'.format(t1).replace('.','')
+            t2_str = '{:07}'.format(t2).replace('.','')
+            uttid = '-'.join([fname, t1_str, t2_str])
+            segs.append((t1, t2, uttid))
+        write_stm(stm_fn, segs)
+    if output_mode == 'idx':
+        voiced_frames = np.where(labs==1)
+        write_idx(stm_fn,voiced_frames[0])
     
     
     
@@ -121,5 +125,5 @@ def lbls_to_segs(x, hoplen, fs = 8000):
     
     
 if __name__ == '__main__':
-    wav_fn, cfg_fn, stm_fn = sys.argv[1:]
-    sad(wav_fn, cfg_fn, stm_fn)
+    wav_fn, cfg_fn, stm_fn, output_mode = sys.argv[1:]
+    sad(wav_fn, cfg_fn, stm_fn, output_mode)

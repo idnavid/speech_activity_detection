@@ -159,6 +159,16 @@ def write_stm(stm_fn, segs, min_dur=0.0):
                 line = ' '.join([fname, '1', fname, str(t1), str(t2), 'transcript!'])
                 fo_stm.write(line+'\n')
     
+#===============================================================================
+def write_idx(idx_fn, voiced_locations):
+    '''
+    Store SAD labels in the form of frame indexes. Voiced frames are printed
+    into text file. 
+    '''
+    fout = open(idx_fn,'w')
+    for i in voiced_locations:
+        fout.write(str(i)+'\n')
+    fout.close()
 
 #===============================================================================
 def read_stm(stm_fn, min_duration = 0.0):
