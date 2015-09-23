@@ -1,7 +1,7 @@
 #! /usr/bin/python 
 import numpy as np
 
-def enframe(s_array, win, inc):
+def enframe_list(s_list, win, inc):
     """enframe: Break input list into frames of length win. The frames
     are overlapped by the amount of win-inc.
     The name was inspired by the enframe MATLAB function provided in voicebox.
@@ -12,7 +12,6 @@ def enframe(s_array, win, inc):
     Output:
         frames:     list of lists. The inner lists are the frames
     """
-    s_list = [s_array[i] for i in range(len(s_array))]
     win1=int(win)
     inc1=int(inc)
     s_temp=s_list[:]#prevent changing the original list
@@ -24,8 +23,23 @@ def enframe(s_array, win, inc):
     frames=[[]]*n_frames
     for i in range(n_frames):
         frames[i]=s_temp[i*inc1:i*inc1+win1]
-    print np.array(frames).shape
-    return np.array(frames)
+    return frames
+
+
+#===============================================================================
+def enframe(x, winlen, hoplen):
+    '''
+    receives a 1D numpy array and divides it into frames.
+    outputs a numpy matrix with the frames on the rows.
+    '''
+    x = np.squeeze(x)
+    if x.ndim != 1: raise TypeError("enframe input must be a 1-dimensional array.")
+    n_frames = 1 + np.int(np.floor((len(x) - winlen) / float(hoplen)))
+    xf = np.zeros((n_frames, winlen))
+    for ii in range(n_frames):
+        xf[ii] = x[ii * hoplen : ii * hoplen + winlen]
+    return xf    
+
 
 
 if __name__=='__main__':
