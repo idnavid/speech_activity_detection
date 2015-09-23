@@ -11,7 +11,6 @@ from common import write_stm, parse_config_file
 import matplotlib.pyplot as plt
 from combosad_feats import combosad_feats
 
-exit()
 
 def sad(wav_fn, cfg_fn, stm_fn):
 

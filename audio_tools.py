@@ -1,6 +1,7 @@
 #! /usr/bin/python 
+import numpy as np
 
-def enframe(s_list, win, inc):
+def enframe(s_array, win, inc):
     """enframe: Break input list into frames of length win. The frames
     are overlapped by the amount of win-inc.
     The name was inspired by the enframe MATLAB function provided in voicebox.
@@ -11,6 +12,7 @@ def enframe(s_list, win, inc):
     Output:
         frames:     list of lists. The inner lists are the frames
     """
+    s_list = [s_array[i] for i in range(len(s_array))]
     win1=int(win)
     inc1=int(inc)
     s_temp=s_list[:]#prevent changing the original list
@@ -22,7 +24,8 @@ def enframe(s_list, win, inc):
     frames=[[]]*n_frames
     for i in range(n_frames):
         frames[i]=s_temp[i*inc1:i*inc1+win1]
-    return frames
+    print np.array(frames).shape
+    return np.array(frames)
 
 
 if __name__=='__main__':
