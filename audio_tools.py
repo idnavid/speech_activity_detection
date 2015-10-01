@@ -1,5 +1,6 @@
 #! /usr/bin/python 
 import numpy as np
+from scipy.io import wavfile
 
 def enframe_list(s_list, win, inc):
     """enframe: Break input list into frames of length win. The frames
@@ -33,7 +34,8 @@ def enframe(x, winlen, hoplen):
     outputs a numpy matrix with the frames on the rows.
     '''
     x = np.squeeze(x)
-    if x.ndim != 1: raise TypeError("enframe input must be a 1-dimensional array.")
+    if x.ndim != 1: 
+        raise TypeError("enframe input must be a 1-dimensional array.")
     n_frames = 1 + np.int(np.floor((len(x) - winlen) / float(hoplen)))
     xf = np.zeros((n_frames, winlen))
     for ii in range(n_frames):
@@ -41,6 +43,47 @@ def enframe(x, winlen, hoplen):
     return xf    
 
 
+#===============================================================================
+def deframe(x_frames, winlen, hoplen):
+    '''
+    interpolates 1-dimensional framed data into persample values. 
+    '''
+    n_frames = len(x_frames)
+    n_samples = n_frames*hoplen + winlen
+    x_samples = np.zeros((n_samples,1))
+    for ii in range(n_frames):
+        x_samples[ii*hoplen : ii*hoplen + winlen] = x_frames[ii]
+    return x_samples
+
+#===============================================================================
+def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
+    '''
+    Plot VAD labels alongside signal for comparison. This tool helps to run 
+    a sanity check on the VAD outputs. This code only works on the index style
+    vad labels. 
+    '''
+    import pylab
+    if mode != 'idx':
+        raise TypeError("This function currently only works on vad labels that are in the form of indexes.")
+    
+    vad_idx = []    
+    f_vad = open(vad_fn)
+    for i in f_vad:
+        vad_idx.append(int(i.strip()))
+    f_vad.close()
+    
+    vad = np.zeros((max(vad_idx)+1,1))
+    for i in vad_idx:
+        vad[i] = 1
+    
+    vad_samples = deframe(vad,winlen,hoplen)
+    fs, s = wavfile.read(wav_fn)
+    pylab.plot(s/float(max(abs(s))))
+    pylab.plot(vad_samples,'r')
+    pylab.show()
+
+
 
 if __name__=='__main__':
     pass
+
