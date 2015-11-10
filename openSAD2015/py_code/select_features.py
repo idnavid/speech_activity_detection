@@ -1,5 +1,6 @@
 #! /usr/bin/python 
 
+import commands 
 
 def selectFeatures(index_list):
     """Creates a paralelized bash command list to run using SGE.
@@ -11,19 +12,21 @@ def selectFeatures(index_list):
     selection_command = '/export/bin/FeatureSelect -m SFS -i %s -o %s -x %s'
     for i in fin:
         line = i.strip()
-        base_name = line.split('/')[-1].split('.')[0]
+        n_frames = int(commands.getoutput('cat '+line+' | wc -l '))
+        if n_frames != 0:
+            base_name = line.split('/')[-1].split('.')[0][:-3]
+         
+            feature_file = '/erasable/nxs113020/mfcc_opensad/'+base_name+'.htk'
+            out_feature_file = '/erasable/nxs113020/mfcc_opensad/'+base_name+'_NT.htk' # for speech
         
-        feature_file = '/erasable/nxs113020/mfcc_opensad/'+base_name+'.htk'
-        out_feature_file = '/erasable/nxs113020/mfcc_opensad/'+base_name+'_S.htk' # for speech
-        
-        bash_command = selection_command%(feature_file,out_feature_file,line)
-        fout.write(bash_command+'\n')
+            bash_command = selection_command%(feature_file,out_feature_file,line)
+            fout.write(bash_command+'\n')
     fin.close()
     fout.close()
 
 
 if __name__=='__main__':
-    selectFeatures("/scratch/nxs113020/speech_activity_detection/openSAD2015/lists/all_idx_decoded.txt")
+    selectFeatures("/scratch/nxs113020/speech_activity_detection/openSAD2015/lists/all_idx_decoded_NT.txt")
      
         
         

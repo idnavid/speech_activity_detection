@@ -1,0 +1,397 @@
+~o
+<STREAMINFO> 1 36
+<VECSIZE> 36<NULLD><MFCC_D_A_Z><DIAGC>
+~h "gmm_speech"
+<BEGINHMM>
+<NUMSTATES> 3
+<STATE> 2
+<NUMMIXES> 64
+<MIXTURE> 1 1.562500e-02
+<MEAN> 36
+ inf inf inf inf inf inf inf inf inf inf inf 1.860598e+11 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 2 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.240445e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 3 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.240445e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 4 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 5 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.240445e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 6 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 7 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 8 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 9 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.240445e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 10 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 11 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 12 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 13 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 14 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 15 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 16 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200149e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 17 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.240445e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 18 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 19 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 20 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 21 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 22 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 23 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 24 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 25 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 26 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 27 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 28 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 29 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.383834e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 30 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 31 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 32 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -1.240169e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 33 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.240445e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 34 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 35 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 36 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 37 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 38 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 39 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 40 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 41 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202916e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 42 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 43 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 44 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 45 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 46 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 47 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 48 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -1.240168e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 49 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 6.202918e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 50 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 51 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 52 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 53 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 54 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 55 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 56 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -1.240168e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 57 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan 1.384243e+07 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 58 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 59 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 60 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -1.240168e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 61 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -6.200148e+10 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 62 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -1.240168e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 63 1.562500e-02
+<MEAN> 36
+ -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -1.240168e+11 -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan -nan
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<MIXTURE> 64 1.562500e-02
+<MEAN> 36
+ -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -1.860322e+11 -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf
+<VARIANCE> 36
+ inf inf inf inf inf inf inf inf inf inf inf 2.403687e+22 inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf
+<GCONST> inf
+<TRANSP> 3
+ 0.000000e+00 1.000000e+00 0.000000e+00
+ 0.000000e+00 9.900000e-01 1.000000e-02
+ 0.000000e+00 0.000000e+00 0.000000e+00
+<ENDHMM>

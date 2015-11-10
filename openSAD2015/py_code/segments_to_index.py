@@ -11,7 +11,7 @@ def seg2idx(fn,ofn):
     fout = open(ofn,'w')
     for i in fid:
         line = i.strip()
-        if ('\tNS\t' in line):
+        if ('\tNT\t' in line):
             line_list = line.split('\t')
             start_seg = float(line_list[2])
             end_seg = float(line_list[3])
