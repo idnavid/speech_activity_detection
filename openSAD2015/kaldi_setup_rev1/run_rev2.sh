@@ -18,9 +18,12 @@ done;
 # Test set:
 for channel in B D E F G H; do
     echo "preparing test data for channel: $channel"
-    python local/create_segments_summary.py $channel mode_test
-    python local/create_textANDsegmentsANDutt2spk.py $channel mode_test
-    utils/utt2spk_to_spk2utt.pl data/test_$channel/utt2spk > data/test_$channel/spk2utt
+    #python local/create_segments_summary.py $channel mode_test
+    #python local/create_textANDsegmentsANDutt2spk.py $channel mode_test
+    #utils/utt2spk_to_spk2utt.pl data/test_$channel/utt2spk > data/test_$channel/spk2utt
+    
+    cat data/test_$channel/wav.scp | cut -d ' ' -f 1 | perl -ne 'if(m/(\S+)/){print "$1 $1\n"}' > data/test_$channel/utt2spk
+    cp data/test_$channel/utt2spk data/test_$channel/spk2utt
 done;
 
 
@@ -39,10 +42,24 @@ done;
 
 # Extract test features:
 for channel in B D E F G H; do
-    steps/make_mfcc.sh --nj 30 --cmd "$train_cmd" data/test_$channel exp/make_mfcc/test_$channel $mfcc_dir
+    steps/make_mfcc.sh --nj 15 --cmd "$train_cmd" data/test_$channel exp/make_mfcc/test_$channel $mfcc_dir
     steps/compute_cmvn_stats.sh data/test_$channel exp/make_mfcc/test_$channel $mfcc_dir
 done;
 
+
 for channel in B D E F G H; do
     steps/decode.sh --nj 10 --cmd "$train_cmd" exp/mono_$channel/graph data/test_$channel exp/mono_$channel/decode_toydev
-done;
+
+    # Create hypothetic text sequency using decoding output (log files)
+    cat exp/mono_$channel/decode_toydev/log/decode.* | grep "_" | grep -v "LOG" | grep -v "-" | sort > data/test_$channel/text
+
+    # align test data using hypothetical text file:
+    # There has to be one alignment job, since the text file wasn't split. 
+    steps/align_si.sh --nj 1 --cmd "$train_cmd" data/test_$channel data/lang exp/mono_$channel exp/mono_${channel}_ali
+
+    gunzip exp/mono_${channel}_ali/ali.1.gz > exp/mono_${channel}_ali/ali.1
+    ali-to-phones --per-frame=true exp/mono_${channel}_ali/final.mdl ark:exp/mono_${channel}_ali/ali.1 ark,t:exp/mono_${channel}_ali/phones.1.tra
+
+    utils/int2sym.pl -f 2- data/lang/phones.txt exp/mono_${channel}_ali/phones.1.tra > exp/mono_${channel}_ali/perframe_phonesequence.txt
+
+done
