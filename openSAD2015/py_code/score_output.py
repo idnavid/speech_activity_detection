@@ -44,6 +44,6 @@ if __name__=='__main__':
                 fn+=1
             elif (true_dict[i]!='S' and hypo_dict[i]=='S'):
                 fp+=1
-    print "false positive:", float(fp)/total
-    print "false negative:", float(fn)/total
+    print "false positive:", "%0.2f"%(100*float(fp)/total)
+    print "false negative:", "%0.2f"%(100*float(fn)/total)
             
