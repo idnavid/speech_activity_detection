@@ -24,7 +24,7 @@ done;
 
 
 ## Train HMM for each channel:
-mfcc_dir=/erasable/nxs113020/plp
+mfcc_dir=/erasable/nxs113020/mfcc
 
 for channel in B D E F G H; do
     echo "training channel: $channel"
@@ -62,9 +62,7 @@ for channel in B D E F G H; do
 done
 
 . utils/parse_options.sh
-dnn_mem_reqs="mem_free=1.0G,ram_free=0.2G"
 dnn_extra_opts="--num-epochs 20 --num-epochs-extra 10 --add-layers-period 1"
 for channel in D; do
-    steps/train_lda_mllt.sh 24 1000 data/train_$channel data/lang exp/mono_${channel}_ali exp/mono_${channel}_ali2
-    steps/nnet2/train_tanh_fast.sh --mix-up 8000 --initial-learning-rate 0.01 --final-learning-rate 0.001 --num-jobs-nnet 16 --num-hidden-layers 4 --hidden-layer-dim 1024 --cmd "$train_cmd" data/train_$channel data/lang exp/mono_${channel}_ali2 exp/nnet_$channel
+    steps/nnet2/train_tanh_fast.sh --num-threads 1 --parallel-opts "-l gpu=1" --initial-learning-rate 0.01 --final-learning-rate 0.001 --num-hidden-layers 4 --hidden-layer-dim 1024 --cmd "$cuda_cmd" data/train_$channel data/lang exp/mono_${channel} exp/nnet_$channel
 done;
