@@ -8,26 +8,25 @@ int main(int argc, char *argv[]) {
 	using namespace kaldi;
 
 	const char *usage = "substract loglikelihoods from model1 and model2 for a given test file. \n";
-
-    kaldi::ParseOptions po(usage);
+    	kaldi::ParseOptions po(usage);
 	po.Read(argc, argv);
 
 	if (po.NumArgs() != 3) {
         po.PrintUsage();
         exit(1);
-    }
+    	}
 
-    std::string modelLLks1 = po.GetArg(1),
+    	std::string modelLLks1 = po.GetArg(1),
                 modelLLks2 = po.GetArg(2),
                 outScores  = po.GetArg(3);
 
-    SequentialBaseFloatVectorReader llk_reader1(modelLLks1);
-    SequentialBaseFloatVectorReader llk_reader2(modelLLks2);
-    BaseFloatVectorWriter score_writer(outScores);
+    	SequentialBaseFloatVectorReader llk_reader1(modelLLks1);
+    	SequentialBaseFloatVectorReader llk_reader2(modelLLks2);
+    	BaseFloatVectorWriter score_writer(outScores);
 
-    for (; !llk_reader1.Done(); llk_reader1.Next()) {
-        std::string key1 = llk_reader1.Key();
-        std::string key2 = llk_reader2.Key();
+    	for (; !llk_reader1.Done(); llk_reader1.Next()) {
+        	std::string key1 = llk_reader1.Key();
+        	std::string key2 = llk_reader2.Key();
 
         if (key1 != key2) {
             KALDI_ERR << modelLLks1 << " and " << modelLLks2 << "must be in the same order";
