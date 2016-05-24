@@ -53,7 +53,13 @@ def sad(wav_fn, cfg_fn, stm_fn, output_mode):
     if output_mode == 'idx':
         voiced_frames = np.where(labs==1)
         write_idx(stm_fn,voiced_frames[0])
-    
+    if output_mode == 'ark':
+        fout = open(stm_fn,'a')
+        fout.write('[')
+        for i in labs:
+            fout.write(' '+str(int(i)))
+        fout.write(' ]\n')
+        fout.close()
     
     
     

@@ -27,6 +27,6 @@ if __name__=='__main__':
         hoplen = sys.argv[5]
     except:
         hoplen = (fs*0.01)
-    mode = 'idx'
+    mode = 'ark'
     audio_tools.plot_vad(wav_fn, vad_fn, winlen, hoplen, mode)
 

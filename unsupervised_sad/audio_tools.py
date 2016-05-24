@@ -1,6 +1,9 @@
 #! /usr/bin/python 
 import numpy as np
 from scipy.io import wavfile
+import sys
+sys.path.append("/scratch/nxs113020/speech_activity_detection/unsupervised_sad")
+import sad as sad_tools
 
 def enframe_list(s_list, win, inc):
     """enframe: Break input list into frames of length win. The frames
@@ -55,6 +58,24 @@ def deframe(x_frames, winlen, hoplen):
         x_samples[ii*hoplen : ii*hoplen + winlen] = x_frames[ii]
     return x_samples
 
+def read_ark_vad(vad_fn):
+    vad_dict = {}
+    fvad = open(vad_fn)
+    for i in fvad:
+        vadid = i.split('[')[0].strip()
+        vad_scores = i.split('[')[1].split(']')[0].strip()
+        vad_scores_list = []
+        for j in vad_scores.split(' '):
+            if (j!=''):
+                vad_scores_list.append(float(j.strip()))
+        vad_scores_array = np.array(vad_scores_list)
+        vad_scores_array[np.where(vad_scores_array>0)] = 1
+        vad_scores_array[np.where(vad_scores_array<1)] = 0
+        vad_scores_array = sad_tools.smooth_sad_decisions(vad_scores_array, 11)
+        vad_dict[vadid] = vad_scores_array
+    return vad_dict
+            
+
 #===============================================================================
 def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
     '''
@@ -63,8 +84,25 @@ def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
     vad labels. 
     '''
     import pylab
-    if mode != 'idx':
-        raise TypeError("This function currently only works on vad labels that are in the form of indexes.")
+    if mode == 'ark':
+        """ Read wav.scp and corresponding scores. 
+            This script plots all VAD scores for files in wav.scp.
+            wav_fn: wav.scp file
+            vad_fn: VAD scores for each utterance in ark,t format
+            """
+        vad_files = read_ark_vad(vad_fn)
+        fwav = open(wav_fn)
+        wavs = {}
+        for i in fwav:
+            uttid = i.split(' ')[0]
+            uttfile = i.split(' ')[1].strip()
+            wavs[uttid] = uttfile
+            vad_samples = deframe(vad_files[uttid],winlen,hoplen)
+            fs, s = wavfile.read(wavs[uttid])
+            pylab.plot(vad_samples+0.01,'r')
+            pylab.plot(s/float(max(abs(s))))
+            pylab.show()
+        return 0
     
     vad_idx = []    
     f_vad = open(vad_fn)
@@ -81,6 +119,7 @@ def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
     pylab.plot(s/float(max(abs(s))))
     pylab.plot(vad_samples,'r')
     pylab.show()
+    return 0
 
 
 
