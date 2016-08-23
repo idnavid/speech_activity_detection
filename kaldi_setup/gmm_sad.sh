@@ -7,26 +7,26 @@ num_jobs=300
 ubmdim=512
 
 run_mfcc(){
-    mfccdir=/erasable/nxs113020/mfcc_sad
+    mfccdir=/erasable/nxs113020/mfcc
     if [ -d mfccdir ]; then
         mkdir -p $mfccdir
     fi
     
-    for x in dev_toy; do
+    for x in tst; do
         steps/make_mfcc.sh --nj $num_jobs --cmd "$train_cmd" \
          data/$x exp/make_mfcc/$x $mfccdir
         steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
     done
 }
-#run_mfcc
+run_mfcc
 
 run_unsupervised_sad(){
-    for x in dev; do
-       local/compute_vad_decision.sh --nj $num_jobs --cmd "$train_cmd" \
+    for x in tst; do
+       local/compute_vad_decision.sh $num_jobs "$train_cmd" \
          data/$x
     done
 }
-run_unsupervised_sad
+#run_unsupervised_sad
 
 train_diag_gmms(){
     num_jobs_gmm=100

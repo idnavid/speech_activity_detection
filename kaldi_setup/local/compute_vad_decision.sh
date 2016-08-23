@@ -1,32 +1,22 @@
 #!/bin/bash 
 
-# Copyright    2013  Daniel Povey
-# Apache 2.0
-# To be run from .. (one directory up from here)
-# see ../run.sh for example
 
-# Compute energy based VAD output 
+# Compute unsupervised combosad VAD output 
 # We do this in just one job; it's fast.
 #
 
-nj=50
-cmd=run.pl
+nj=$1
+cmd=$2
 if [ -f path.sh ]; then . ./path.sh; fi
 if [ -f cmd.sh ]; then . ./cmd.sh; fi
 . utils/parse_options.sh || exit 1;
 
-if [ $# != 1 ]; then
-   echo "Usage: $0 [options] <data-dir> <log-dir> <path-to-vad-dir>";
-   echo "e.g.: $0 data/train exp/make_vad mfcc"
-   echo " Options:"
-   echo "  --vad-config <config-file>                       # config passed to compute-vad-energy"
-   echo "  --nj <nj>                                        # number of parallel jobs"
-   echo "  --cmd (utils/run.pl|utils/queue.pl <queue opts>) # how to run jobs."
-   exit 1;
-fi
+data=$3
+sad_dir=/scratch/nxs113020/speech_activity_detection/kaldi_setup/
 
-data=$PWD/$1
-
+echo "***** Running unsupervised VAD on $data *****"
+echo "      number of jobs: $nj"
+echo "      mode $cmd"
 # use "name" as part of name of the archive.
 name=`basename $data`
 
@@ -40,9 +30,9 @@ done
 
 utils/split_data.sh $data $nj || exit 1;
 sdata=$data/split$nj;
-
-$cmd JOB=1:$nj log/vad.JOB \
-  local/run_combosad.sh $sdata/JOB/wav.scp ark,scp:$sdata/JOB/vad_${name}.JOB.ark,$sdata/JOB/vad_${name}.JOB.scp \
+cmd=$train_cmd
+$cmd JOB=1:$nj $data/log/vad.JOB \
+  $sad_dir/local/run_combosad.sh $sdata/JOB/wav.scp ark,scp:$sdata/JOB/vad_${name}.JOB.ark,$sdata/JOB/vad_${name}.JOB.scp \
   || exit 1;
 
 for ((n=1; n<=nj; n++)); do
