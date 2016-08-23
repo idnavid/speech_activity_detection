@@ -86,19 +86,22 @@ def preprocess(sin, sr, snr):
     
 
     
-def smooth_sad_decisions(labs, smooth_len):
+def smooth_sad_decisions(labs, smooth_len, threshold=0.5):
     '''
     Refines sad decisions by:
     1- applying a median filter
     2- applying a low-pass filter and repeating the hard-thresholding.
     '''
     b, a = sg.butter(3, 0.05)
-    labs = sg.filtfilt(b,a,labs)    
-    labs = 1*(labs > 0.5) # The multiplication by 1 is to convert to int
-    labs = sg.medfilt(labs, smooth_len)
+    labs_filtered = sg.filtfilt(b,a,labs)    
+    del labs
+    labs_binary = 1*(labs_filtered > threshold) # The multiplication by 1 is to convert to int
+    del labs_filtered
+    labs_out = sg.medfilt(labs_binary, smooth_len)
+    del labs_binary
     
     
-    return labs
+    return labs_out
 
 
 def lbls_to_segs(x, hoplen, fs = 8000):
