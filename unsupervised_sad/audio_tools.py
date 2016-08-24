@@ -69,8 +69,9 @@ def read_ark_vad(vad_fn):
             if (j!=''):
                 vad_scores_list.append(float(j.strip()))
         vad_scores_array = np.array(vad_scores_list)
-        vad_scores_array[np.where(vad_scores_array>0)] = 1
-        vad_scores_array[np.where(vad_scores_array<1)] = 0
+        print vad_scores_array[:100]
+        #vad_scores_array[np.where(vad_scores_array>0)] = 1
+        #vad_scores_array[np.where(vad_scores_array<1)] = 0
         vad_scores_array = sad_tools.smooth_sad_decisions(vad_scores_array, 11)
         vad_dict[vadid] = vad_scores_array
     return vad_dict
@@ -99,8 +100,11 @@ def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
             wavs[uttid] = uttfile
             vad_samples = deframe(vad_files[uttid],winlen,hoplen)
             fs, s = wavfile.read(wavs[uttid])
-            pylab.plot(vad_samples+0.01,'r')
-            pylab.plot(s/float(max(abs(s))))
+            N1 = 300000
+            N2 = N1 + 50000
+            pylab.plot(vad_samples[N1:N2],'r')
+            s = s[N1:N2]
+            pylab.scatter(range(0,len(s)),s/float(max(abs(s))))
             pylab.show()
         return 0
     
