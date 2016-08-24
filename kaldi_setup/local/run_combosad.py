@@ -1,7 +1,11 @@
 
 import sys
 import os
-module_path = '/scratch/nxs113020/speech_activity_detection/unsupervised_sad/'
+wav_scp = sys.argv[1]
+out = sys.argv[2]
+module_path = sys.argv[3]
+sph2pipe_dir = sys.argv[4]
+
 sys.path.append(module_path)
 import sad as combo_sad
 
@@ -16,8 +20,6 @@ def remove_special_chars(in_string):
         out_string+=i
     return out_string
 
-wav_scp = sys.argv[1]
-out = sys.argv[2]
 
 out_list = out.split(':')
 out_type1 = out_list[0].split(',')[0]
@@ -37,7 +39,10 @@ else:
 
 os.system('rm '+ark_file+' '+scp_file)
 f_in = open(wav_scp)
-wav_dump = '/erasable/nxs113020/wav_dump/'
+wav_dump = 'wav_dump/'
+if not(os.path.isdir(wav_dump)):
+    os.system('mkdir '+wav_dump)
+
 for i in f_in:
     line_list = i.strip().split(' ')
     utt_id = line_list[0]
@@ -49,12 +54,21 @@ for i in f_in:
             if j.strip()=='|':
                 j = '> '
             if j.strip()=='sph2pipe':
-                sph_converter = '/export/bin/sph2pipe'
+                sph_converter = sph2pipe_dir.strip()+'/sph2pipe'
             else:
                 sph_converter += ' '+j.strip()
         file_path = wav_dump+remove_special_chars(utt_id)
         print sph_converter+file_path+'.wav'
         os.system(sph_converter+file_path+'.wav')
+    if 'sox' in line_list:
+        wav_converter = ''
+        for j in line_list[1:]:
+            if j.strip()=='|':
+                j = '> '
+            wav_converter += ' '+j.strip()
+        file_path = wav_dump+remove_special_chars(utt_id)
+        print wav_converter+file_path+'.wav'
+        os.system(wav_converter+file_path+'.wav')
     f_out = open(ark_file,'a')
     f_out.write(utt_id+' ')
     f_out.close()
