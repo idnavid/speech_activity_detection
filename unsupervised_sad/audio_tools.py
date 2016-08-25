@@ -2,7 +2,8 @@
 import numpy as np
 from scipy.io import wavfile
 import sys
-sys.path.append("/scratch/nxs113020/speech_activity_detection/unsupervised_sad")
+import os
+sys.path.append("/home/nxs113020/speech_activity_detection/unsupervised_sad")
 import sad as sad_tools
 
 def enframe_list(s_list, win, inc):
@@ -69,10 +70,9 @@ def read_ark_vad(vad_fn):
             if (j!=''):
                 vad_scores_list.append(float(j.strip()))
         vad_scores_array = np.array(vad_scores_list)
-        print vad_scores_array[:100]
-        #vad_scores_array[np.where(vad_scores_array>0)] = 1
-        #vad_scores_array[np.where(vad_scores_array<1)] = 0
         vad_scores_array = sad_tools.smooth_sad_decisions(vad_scores_array, 11)
+        vad_scores_array[np.where(vad_scores_array>0)] = 1
+        vad_scores_array[np.where(vad_scores_array<1)] = 0
         vad_dict[vadid] = vad_scores_array
     return vad_dict
             
@@ -97,14 +97,23 @@ def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
         for i in fwav:
             uttid = i.split(' ')[0]
             uttfile = i.split(' ')[1].strip()
+            if (uttfile == 'sox'):
+                sox_command = ''
+                for j in i.split(' ')[1:]:
+                    if (j.strip() == '|'):
+                        j = '>'
+                    sox_command += j+' '
+                print sox_command
+                os.system(sox_command+' wav_dump/tmp.wav')
+                uttfile = 'wav_dump/tmp.wav'
             wavs[uttid] = uttfile
             vad_samples = deframe(vad_files[uttid],winlen,hoplen)
             fs, s = wavfile.read(wavs[uttid])
             N1 = 300000
-            N2 = N1 + 50000
-            pylab.plot(vad_samples[N1:N2],'r')
+            N2 = N1 + 1000000
             s = s[N1:N2]
-            pylab.scatter(range(0,len(s)),s/float(max(abs(s))))
+            pylab.plot(s/float(max(abs(s))))
+            pylab.plot(vad_samples[N1:N2]/float(max(abs(vad_samples[N1:N2])))+0.01,'r')
             pylab.show()
         return 0
     
