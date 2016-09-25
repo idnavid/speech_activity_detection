@@ -16,7 +16,7 @@ if __name__=='__main__':
     wav_fn = sys.argv[1]
     vad_fn = sys.argv[2]
     try:
-        fs = sys.argv[3]
+        fs = float(sys.argv[3])
     except:
         fs = 16000
     try: 

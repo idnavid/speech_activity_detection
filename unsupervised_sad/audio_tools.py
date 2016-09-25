@@ -2,6 +2,7 @@
 import numpy as np
 from scipy.io import wavfile
 import sys
+import os
 sys.path.append("/scratch/nxs113020/speech_activity_detection/unsupervised_sad")
 import sad as sad_tools
 
@@ -77,6 +78,23 @@ def read_ark_vad(vad_fn):
             
 
 #===============================================================================
+def sph2wav(wavscp_line,output_wavname = 'tmp.wav'):
+    '''
+    For when  the input wav.scp file contains a sph2pipe command instead 
+    of a direct path to a wav-file. 
+    example:
+        [uttid] sph2pipe [filename].sph -c 1 -f wav | 
+    '''
+    command = ''
+    for k in wavscp_line.strip().split(' ')[1:]:
+        if k == '|':
+            k = '> '
+        command += k.strip()+' '
+    command += output_wavname
+    os.system(command)
+    return output_wavname
+                
+#===============================================================================
 def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
     '''
     Plot VAD labels alongside signal for comparison. This tool helps to run 
@@ -96,6 +114,8 @@ def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
         for i in fwav:
             uttid = i.split(' ')[0]
             uttfile = i.split(' ')[1].strip()
+            if 'sph2pipe' in i:
+               uttfile = sph2wav(i)
             wavs[uttid] = uttfile
             vad_samples = deframe(vad_files[uttid],winlen,hoplen)
             fs, s = wavfile.read(wavs[uttid])
