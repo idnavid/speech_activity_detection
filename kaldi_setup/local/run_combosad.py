@@ -37,7 +37,7 @@ else:
 
 os.system('rm '+ark_file+' '+scp_file)
 f_in = open(wav_scp)
-wav_dump = '/erasable/nxs113020/wav_dump/'
+wav_dump = '/scratch/nxs113020/wav_dump/'
 for i in f_in:
     line_list = i.strip().split(' ')
     utt_id = line_list[0]
