@@ -1,6 +1,6 @@
 all:
 
-KALDI_DIR = /export/tools/kaldi-trunk3
+KALDI_DIR = /home/nxs113020/kaldi-trunk
 
 EXTRA_CXXFLAGS = -Wno-sign-compare -I${KALDI_DIR}/src
 include ${KALDI_DIR}/src/kaldi.mk
