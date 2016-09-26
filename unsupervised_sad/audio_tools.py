@@ -128,8 +128,8 @@ def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
             wavs[uttid] = uttfile
             vad_samples = deframe(vad_files[uttid],winlen,hoplen)
             fs, s = wavfile.read(wavs[uttid])
-            N1 = 300000
-            N2 = N1 + 1000000
+            N1 = 0
+            N2 = N1 + len(vad_samples)
             s = s[N1:N2]
             pylab.plot(s/float(max(abs(s))))
             pylab.plot(vad_samples[N1:N2]/float(max(abs(vad_samples[N1:N2])))+0.01,'r')
