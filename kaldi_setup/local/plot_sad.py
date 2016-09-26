@@ -1,6 +1,7 @@
 #! /usr/bin/python 
 
 import sys
+sys.path.append('/scratch/nxs113020/speech_activity_detection/unsupervised_sad')
 sys.path.append('/home/nxs113020/speech_activity_detection/unsupervised_sad')
 
 import audio_tools
