@@ -23,6 +23,8 @@ def sad(wav_fn, cfg_fn, stm_fn, output_mode):
     # Feature extraction
     print 'extracting SAD features...'
     fs, wav = wavfile.read(wav_fn)
+    noise = np.random.normal(0,1e-4,len(wav))
+    wav = wav + noise # adding jitter, in case signal is all zero. 
     wav = np.asarray(wav, dtype='float64') / max(abs(wav))
     wav = preprocess(wav[:,np.newaxis], fs, 25.0).squeeze()
     feats = combosad_feats(wav, cfg)
@@ -40,7 +42,10 @@ def sad(wav_fn, cfg_fn, stm_fn, output_mode):
     # make decisions and write output stm file
     labs = feats > thr
     labs = labs.squeeze()
-    labs = smooth_sad_decisions(labs, 1)
+    try:
+        labs = smooth_sad_decisions(labs, 1)
+    except:
+        labs=labs
     if output_mode == 'stm':
         tmp_segs = lbls_to_segs(labs, hoplen, cfg['fs'])
         segs = []

@@ -1,6 +1,7 @@
 #! /usr/bin/python 
 
 import sys
+sys.path.append('/scratch/nxs113020/speech_activity_detection/unsupervised_sad')
 sys.path.append('/home/nxs113020/speech_activity_detection/unsupervised_sad')
 
 import audio_tools
@@ -16,7 +17,7 @@ if __name__=='__main__':
     wav_fn = sys.argv[1]
     vad_fn = sys.argv[2]
     try:
-        fs = sys.argv[3]
+        fs = float(sys.argv[3])
     except:
         fs = 16000
     try: 
