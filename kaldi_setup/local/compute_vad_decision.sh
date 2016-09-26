@@ -12,7 +12,10 @@ if [ -f cmd.sh ]; then . ./cmd.sh; fi
 . utils/parse_options.sh || exit 1;
 
 data=$3
-sad_dir=/scratch/nxs113020/speech_activity_detection/kaldi_setup/
+## For cluster:
+#sad_dir=/scratch/nxs113020/speech_activity_detection/kaldi_setup/
+## For local machine(s)
+sad_dir=/home/nxs113020/speech_activity_detection/kaldi_setup/
 
 echo "***** Running unsupervised VAD on $data *****"
 echo "      number of jobs: $nj"

@@ -3,6 +3,7 @@ import numpy as np
 from scipy.io import wavfile
 import sys
 import os
+sys.path.append("/home/nxs113020/speech_activity_detection/unsupervised_sad")
 sys.path.append("/scratch/nxs113020/speech_activity_detection/unsupervised_sad")
 import sad as sad_tools
 
