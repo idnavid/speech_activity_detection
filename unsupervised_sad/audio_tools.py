@@ -113,6 +113,7 @@ def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
         fwav = open(wav_fn)
         wavs = {}
         for i in fwav:
+            i = i.strip()
             uttid = i.split(' ')[0]
             uttfile = i.split(' ')[1].strip()
             if 'sph2pipe' in i:
@@ -123,7 +124,7 @@ def plot_vad(wav_fn, vad_fn, winlen, hoplen, mode):
                     if (j.strip() == '|'):
                         j = '>'
                     sox_command += j+' '
-                print sox_command
+                print sox_command + 'wav_dump/tmp.wav'
                 os.system(sox_command+' wav_dump/tmp.wav')
                 uttfile = 'wav_dump/tmp.wav'
             wavs[uttid] = uttfile
