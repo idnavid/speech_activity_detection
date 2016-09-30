@@ -71,7 +71,10 @@ def read_ark_vad(vad_fn):
             if (j!=''):
                 vad_scores_list.append(float(j.strip()))
         vad_scores_array = np.array(vad_scores_list)
-        vad_scores_array = sad_tools.smooth_sad_decisions(vad_scores_array, 11)
+        try:
+            vad_scores_array = sad_tools.smooth_sad_decisions(vad_scores_array, 11)
+        except:
+            vad_scores_array = vad_scores_array
         vad_scores_array[np.where(vad_scores_array>0)] = 1
         vad_scores_array[np.where(vad_scores_array<1)] = 0
         vad_dict[vadid] = vad_scores_array

@@ -87,9 +87,9 @@ else:
 os.system('rm '+ark_file+' '+scp_file)
 f_in = open(wav_scp)
 ## For cluster:
-#wav_dump = '/scratch/nxs113020/wav_dump/'
+wav_dump = '/scratch/nxs113020/wav_dump/'
 ## For local machine(s):
-wav_dump = '/home/nxs113020/wav_dump/'
+#wav_dump = '/home/nxs113020/wav_dump/'
 
 if not(os.path.isdir(wav_dump)):
     os.system('mkdir '+wav_dump)
